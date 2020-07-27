@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package prime;
+
+option java_package = "com.primeFactor.generated.stubs";
+option java_multiple_files = true;
+
+message PrimeNumberDecompositionRequest {
+  int64 number = 1;
+}
+
+message PrimeNumberDecompositionResponse {
+  int64 prime_factor = 1;
+}
+
+service PrimeNumberService{
+  rpc PrimeNumberDecomposition(PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse) {};
+}
